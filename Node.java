@@ -43,7 +43,7 @@ public class Node{
 
     //toString
     public String toString(){
-        return "Node: " + this.data;
+        return "*" + this.data + "*";
     }
 
 }
