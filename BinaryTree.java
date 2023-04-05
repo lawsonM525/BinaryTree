@@ -6,10 +6,16 @@ public class BinaryTree {
 
     //Class variables : root
     private Node root;
+    private Node current;
 
     //Constructor
     public BinaryTree(){
         this.root = null;
+    }
+
+    public BinaryTree(Node root){
+        this.root = root;
+        this.current = root;
     }
 
     //Getters and Setters
@@ -21,8 +27,57 @@ public class BinaryTree {
         this.root = root;
     }
 
+    public Node getCurrent(){
+        return this.current;
+    }
+
     //  METHODS
 
+    // go Left
+    public void goLeft(){
+        if(this.current.getLeft() != null){
+            this.current = this.current.getLeft();
+        }
+        else{
+            System.out.println("No left child");
+        }
+    }
+
+    // go Right
+    public void goRight(){
+        if(this.current.getRight() != null){
+            this.current = this.current.getRight();
+        }
+        else{
+            System.out.println("No right child");
+        }
+    }
+
+    // insert Left
+    public void insertLeft(int data){
+        Node newNode = new Node(data);
+        if(this.current.getLeft() == null){
+            this.current.setLeft(newNode);
+        }
+        else{
+            System.out.println("Left child already exists."); //do not want to overwrite a subtree
+        }
+    }
+
+    // insert Right
+    public void insertRight(int data){
+        Node newNode = new Node(data);
+        if(this.current.getRight() == null){
+            this.current.setRight(newNode);
+        }
+        else{
+            System.out.println("Right child already exists."); //do not want to overwrite a subtree
+        }
+    }
+
+
+
+    /**
     // addNode
     public void addNode(int data){
         Node newNode = new Node(data);
@@ -66,7 +121,7 @@ public class BinaryTree {
         s += toString(root.getRight());
         return s;
     }
-
+    **/
 
 
 }
