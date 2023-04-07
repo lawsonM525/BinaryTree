@@ -6,7 +6,6 @@ public class BinaryTree {
 
     //Class variables : root
     private Node root;
-    private Node current;
 
     //Constructor
     public BinaryTree(){
@@ -15,7 +14,6 @@ public class BinaryTree {
 
     public BinaryTree(Node root){
         this.root = root;
-        this.current = root;
     }
 
     //Getters and Setters
@@ -27,54 +25,71 @@ public class BinaryTree {
         this.root = root;
     }
 
-    public Node getCurrent(){
-        return this.current;
-    }
-
     //  METHODS
 
     // go Left
-    public void goLeft(){
-        if(this.current.getLeft() != null){
-            this.current = this.current.getLeft();
+    public Node goLeft(Node current){
+        if(current.getLeft() != null){
+            current = current.getLeft();
+            return current;
         }
         else{
             System.out.println("No left child");
+            return current;
         }
     }
 
     // go Right
-    public void goRight(){
-        if(this.current.getRight() != null){
-            this.current = this.current.getRight();
+    public Node goRight(Node current){
+        if(current.getRight() != null){
+            current = current.getRight();
+            return current;
         }
         else{
             System.out.println("No right child");
+            return current;
         }
     }
 
     // insert Left
-    public void insertLeft(int data){
+    public void insertLeft(Node current, int data){
         Node newNode = new Node(data);
-        if(this.current.getLeft() == null){
-            this.current.setLeft(newNode);
+        if(current.getLeft() == null){
+            current.setLeft(newNode);
         }
         else{
-            System.out.println("Left child already exists."); //do not want to overwrite a subtree
+            System.out.println("Left child already exists");
         }
     }
 
     // insert Right
-    public void insertRight(int data){
+    public void insertRight(Node current, int data){
         Node newNode = new Node(data);
-        if(this.current.getRight() == null){
-            this.current.setRight(newNode);
+        if(current.getRight() == null){
+            current.setRight(newNode);
         }
         else{
-            System.out.println("Right child already exists."); //do not want to overwrite a subtree
+            System.out.println("Right child already exists");
         }
     }
+    
 
+    // toString prints using InOrder 
+    //traversal is recursive to traverse multiple subtrees
+    // InOrder traversal prints the left subtree, then the root, then the right subtree
+    // this would print the tree in ascending order when search is implemented
+    // algorithm obtained from https://janac.medium.com/simple-tostring-method-for-binary-search-trees-af6b7171f432
+    public String toString (Node root) {
+        String s = "";
+        if (root == null) {
+            return "";
+        }
+    
+        s += toString(root.getLeft());
+        s += root.toString();
+        s += toString(root.getRight());
+        return s;
+    }
 
 
     /**
@@ -103,23 +118,6 @@ public class BinaryTree {
                 }
             }
         }
-    }
-
-    // toString prints using InOrder 
-    //traversal is recursive to traverse multiple subtrees
-    // InOrder traversal prints the left subtree, then the root, then the right subtree
-    // this would print the tree in ascending order when search is implemented
-    // algorithm obtained from https://janac.medium.com/simple-tostring-method-for-binary-search-trees-af6b7171f432
-    public String toString (Node root) {
-        String s = "";
-        if (root == null) {
-            return "";
-        }
-    
-        s += toString(root.getLeft());
-        s += root.toString();
-        s += toString(root.getRight());
-        return s;
     }
     **/
 
