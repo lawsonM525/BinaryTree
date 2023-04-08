@@ -91,6 +91,11 @@ public class BinaryTree {
         return s;
     }
 
+    //Wrapper method for toString
+    public String toString(){
+        return toString(this.root);
+    }
+
 
     /**
     // addNode
