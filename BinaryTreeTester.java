@@ -16,8 +16,8 @@ public class BinaryTreeTester {
         System.out.println("Tree:" + bt.toString());
     }
 
-    public void testGetRight(){
-        System.out.println("Testing getRight Method");
+    public void testGoRight(){
+        System.out.println("Testing goRight Method");
         System.out.println("Making binary tree with root node with data 5");
         BinaryTree bt = new BinaryTree(new Node(5));
         System.out.println("Tree:" + bt.toString());
@@ -43,16 +43,31 @@ public class BinaryTreeTester {
         
     }
 
+    public  void testInsertRight(){
+        System.out.println("Testing insertRight Method");
+        System.out.println("Making binary tree with root node with data 5");
+        BinaryTree bt = new BinaryTree(new Node(5));
+        System.out.println("Tree:" + bt.toString());
+        System.out.println("Inserting node with data 10 to the right of the root node");
+        bt.insertRight(bt.getRoot(), 10);
+        System.out.println("Tree:" + bt.toString());
+        
+    }
+
 
 
     public static void main(String[] args){
         System.out.println(" ======== Starting Binary Tree Tester ========");   
         BinaryTreeTester btt = new BinaryTreeTester();
-        System.out.println(" ");
         btt.testGoLeft();
-        System.out.println(" ");
-        btt.testGetRight();
-        System.out.println(" ");
+        System.out.println("");
+        btt.testGoRight();
+        System.out.println("");
+        btt.testInsertLeft();
+        System.out.println("");
+        btt.testInsertRight();
+        System.out.println("");
+        System.out.println(" ======== Ending Binary Tree Tester ========");
 
     }
     
