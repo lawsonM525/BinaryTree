@@ -1,49 +1,42 @@
-// has recursive pointer to both a right and a left child
-// has name or number or whatever label
-// recursion is key in the binary tree
+//implementation of node with string data
 
-public class Node{
-    
-    //Class variables : data, left, right
-    private int data;
+public class Node {
+    private String data;
     private Node left;
     private Node right;
-
-    //Constructor
-    public Node(int data){
+    
+    public Node(String data){
         this.data = data;
-        this.left = null;
-        this.right = null;
+        left = null;
+        right = null;
     }
-
-    //Getters and Setters
-    public int getData(){
-        return this.data;
+    
+    public String getData(){
+        return data;
     }
-
-    public void setData(int data){
+    
+    public void setData(String data){
         this.data = data;
     }
-
+    
     public Node getLeft(){
-        return this.left;
+        return left;
     }
-
+    
     public void setLeft(Node left){
         this.left = left;
     }
-
+    
     public Node getRight(){
-        return this.right;
+        return right;
     }
-
+    
     public void setRight(Node right){
         this.right = right;
     }
-
-    //toString
+    
     public String toString(){
-        return "*" + this.data + "*";
+        return data;
     }
-
+    
 }
