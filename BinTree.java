@@ -7,6 +7,10 @@ public class BinTree {
     public BinTree(Node root){
         this.root = root;
     }
+
+    public BinTree(){
+        root = null;
+    }
     
     public Node goLeft(Node n){
         return n.left;

@@ -3,6 +3,10 @@ public class BinSearchTree extends BinTree{
     public BinSearchTree(Node root){
         super(root);
     }
+
+    public BinSearchTree(){
+        super();
+    }
     
     public void insert(String data){
         Node newNode = new Node(data);
