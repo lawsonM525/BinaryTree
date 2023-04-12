@@ -2,39 +2,40 @@
 
 public class BinTree {
     
-    private Node root;
+    Node root;
     
     public BinTree(Node root){
         this.root = root;
     }
     
-    public Node getRoot(){
-        return root;
-    }
-    
-    public void setRoot(Node root){
-        this.root = root;
-    }
-    
     public Node goLeft(Node n){
-        return n.getLeft();
+        return n.left;
     }
     
     public Node goRight(Node n){
-        return n.getRight();
+        return n.right;
     }
     
     public void insertLeft(Node n, String data){
         Node newNode = new Node(data);
-        n.setLeft(newNode);
+        n.left = newNode;
     }
     
     public void insertRight(Node n, String data){
         Node newNode = new Node(data);
-        n.setRight(newNode);
+        n.right = newNode;
     }
     
+    // toString prints binary tree using parentheses to show structure
     public String toString(){
-        return root.toString();
+        return toString(root);
+    }
+
+    private String toString(Node node) {
+        if (node == null) {
+            return "_";
+        } else {
+            return "(" + node.data + " " + toString(node.left) + " " + toString(node.right) + ")";
+        }
     }
 }
