@@ -21,7 +21,7 @@ public class BinSearchTreeInteract {
                 System.out.println("quit - quits the program");
             }
             else if(input.equals("sort")){
-                System.out.println("Sorted Tree:" + bst.sort());
+                System.out.println("Sorted Tree:" + toString(bst.sort()));
             }
             else if(input.startsWith("insert")){
                 String[] split = input.split(" ");
@@ -39,5 +39,15 @@ public class BinSearchTreeInteract {
         }
 
 
+    }
+
+    // Array to String method
+    public static String toString(String[] array){
+        String result = "[ ";
+        for(int i = 0; i < array.length; i++){
+            result += array[i] + ", ";
+        }
+        result += " ]";
+        return result;
     }
 }

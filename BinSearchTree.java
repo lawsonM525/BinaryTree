@@ -30,8 +30,10 @@ public class BinSearchTree extends BinTree{
     }
     
     // sort prints binary tree in in-order traversal order
-    public String sort(){
-        return sort(root);
+    public String[] sort(){
+        String sortString = sort(root);
+        String[] sortArray = sortString.split(" ");
+        return sortArray;
     }
 
     private String sort(Node node) {
